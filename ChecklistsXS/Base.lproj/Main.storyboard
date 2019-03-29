@@ -18,27 +18,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="vzQ-72-hel">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="vzQ-72-hel">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vzQ-72-hel" id="9ch-1X-abl">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="252" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mo-Qw-HDy">
-                                            <rect key="frame" x="16" y="11" width="262" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mo-Qw-HDy">
+                                            <rect key="frame" x="43" y="11" width="207" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLy-1d-7in">
+                                            <rect key="frame" x="16" y="11" width="19" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="0Mo-Qw-HDy" secondAttribute="trailing" constant="2" id="CY8-e6-9QV"/>
-                                        <constraint firstItem="0Mo-Qw-HDy" firstAttribute="top" secondItem="9ch-1X-abl" secondAttribute="top" constant="11" id="ZJd-Rm-muC"/>
-                                        <constraint firstItem="0Mo-Qw-HDy" firstAttribute="leading" secondItem="9ch-1X-abl" secondAttribute="leading" constant="16" id="b3w-fP-JGS"/>
-                                        <constraint firstAttribute="bottom" secondItem="0Mo-Qw-HDy" secondAttribute="bottom" constant="11.5" id="qa7-04-48w"/>
-                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="jqr-IX-ToJ" kind="show" identifier="EditItem" trigger="accessoryAction" id="nnU-Kv-nkW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -56,12 +61,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNd-pW-XQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="608" y="-68"/>
+            <point key="canvasLocation" x="607.5" y="-68.661971830985919"/>
         </scene>
         <!--AddI tem-->
         <scene sceneID="Mde-CS-z3R">
             <objects>
-                <tableViewController id="jqr-IX-ToJ" customClass="AddItemViewController" customModule="ChecklistsXS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="jqr-IX-ToJ" customClass="ItemDetailViewController" customModule="ChecklistsXS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="xNg-za-DXH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,4 +143,7 @@
             <point key="canvasLocation" x="-101.25" y="-67.605633802816897"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nnU-Kv-nkW"/>
+    </inferredMetricsTieBreakers>
 </document>
