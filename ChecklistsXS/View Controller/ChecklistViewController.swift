@@ -13,8 +13,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //loadChecklistItems()
-        
+       
         // disable large title
         navigationItem.largeTitleDisplayMode = .never
         
@@ -26,6 +25,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     
     //MARK:- Table View Delegates
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(checklist.items.count)
         return checklist.items.count
     }
 
